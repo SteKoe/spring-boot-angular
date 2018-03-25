@@ -50,6 +50,22 @@
                 <version>1.6.0</version>
                 <executions>
                     <execution>
+                        <id>ng-test</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>exec</goal>
+                        </goals>
+                        <configuration>
+                            <executable>node</executable>
+                            <workingDirectory>${project.basedir}/src/main/webapp</workingDirectory>
+                            <arguments>
+                                <argument>node_modules/@angular/cli/bin/ng</argument>
+                                <argument>test</argument>
+                                <argument>-sr</argument>
+                            </arguments>
+                        </configuration>
+                    </execution>
+                    <execution>
                         <id>npm-install</id>
                         <phase>generate-resources</phase>
                         <goals>
